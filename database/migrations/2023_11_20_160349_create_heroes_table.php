@@ -15,10 +15,8 @@ return new class extends Migration
     {
         Schema::create('heroes', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('nombrereal');
-            $table->string('imagenperfil');
-            $table->string('imagenes');
+            $table->string('nombre')->unique();
+            $table->string('nombrereal')->unique();
             $table->string('studioanimacion');
             $table->string('descripcion');
             $table->string('origen');

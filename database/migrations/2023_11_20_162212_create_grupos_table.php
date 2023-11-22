@@ -18,8 +18,6 @@ return new class extends Migration
         Schema::create('grupos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->foreignIdFor(Hero::class)->constrained();
-            $table->foreignIdFor(misiones::class)->constrained();
             $table->timestamps();
         });
     }

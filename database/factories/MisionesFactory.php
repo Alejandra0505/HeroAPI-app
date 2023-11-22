@@ -16,8 +16,16 @@ class MisionesFactory extends Factory
      */
     public function definition()
     {
+        $misiones = $this->faker->randomElement([
+            'Activa',
+            'Desactiva',
+        ]);
         return [
-            //
+            'estado'=> $misiones,
+
+            'tipomision_id'=> function () {
+                return \App\Models\tipomision::factory()->create()->id;
+            },
         ];
     }
 }

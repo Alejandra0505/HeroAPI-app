@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\grupo;
+use App\Models\Hero;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +16,6 @@ class GrupoSeeder extends Seeder
      */
     public function run()
     {
-        //
+     grupo::factory()->count(1)->create();
     }
 }

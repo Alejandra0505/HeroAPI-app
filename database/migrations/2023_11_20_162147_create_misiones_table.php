@@ -16,7 +16,6 @@ return new class extends Migration
     {
         Schema::create('misiones', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion');
             $table->string('estado');
             $table->foreignIdFor(tipomision::class)->constrained();
             $table->timestamps();
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('misiones');
+        Schema::dropIfExists('misiones'); 
     }
 };

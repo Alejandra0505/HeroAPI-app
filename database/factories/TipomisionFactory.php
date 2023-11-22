@@ -16,8 +16,12 @@ class TipomisionFactory extends Factory
      */
     public function definition()
     {
+        $tmision = $this->faker->randomElement([
+            "MR (Misiones Rutinarias)",
+            "MSU (Misiones para Salvar el Universo)",
+        ]);
         return [
-            //
+            "tmision"=> $tmision,
         ];
     }
 }

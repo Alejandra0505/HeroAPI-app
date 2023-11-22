@@ -15,16 +15,6 @@ class HeroSeeder extends Seeder
      */
     public function run()
     {
-        $Hero = new Hero;
-        $Hero->hero_id = 1;
-        $Hero->hero_nombre = "";
-        $Hero->hero_nombrereal = "";
-        $Hero->hero_imagenperfil = "";
-        $Hero->hero_images= "";
-        $Hero->hero_studioanimacion = "";
-        $Hero->hero_description = "";
-        $Hero->hero_origen = "";
-        $Hero->hero_añodebut = "";
-        $Hero->save();
+       Hero::factory()->count(1)->create();
     }
 }

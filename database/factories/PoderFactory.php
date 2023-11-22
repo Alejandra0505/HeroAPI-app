@@ -14,10 +14,22 @@ class PoderFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition()
+    public function definition(): array
     {
+        $poder = $this->faker->randomElement([
+            'telequinesia',
+            'Super fuerza',
+            'Proyección de energía',
+            'Vuelo',
+            'Invisibilidad',
+            'Manipulación del tiempo',
+            'Telepatía',
+            'Factor de curación',
+            'control elemental',
+            'Deformación de la realidad',
+        ]);
         return [
-            //
+            'superpoder' => $poder
         ];
     }
 }

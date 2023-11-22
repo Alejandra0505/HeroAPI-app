@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\poderh;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class PoderhSeeder extends Seeder
      */
     public function run()
     {
-        //
+        poderh::factory()->count(1)->create();
     }
 }

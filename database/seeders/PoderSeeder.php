@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\poder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class PoderSeeder extends Seeder
      */
     public function run()
     {
-        //
+        poder::factory()->count(1)->create();
     }
 }
