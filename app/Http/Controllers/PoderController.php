@@ -15,7 +15,8 @@ class PoderController extends Controller
      */
     public function index()
     {
-        //
+        $poder = poder::all();
+        return response()->json($poder);
     }
 
     /**
@@ -36,7 +37,8 @@ class PoderController extends Controller
      */
     public function store(StorepoderRequest $request)
     {
-        //
+        $poder = poder::create( $request->all() );
+        return response()->json($poder);
     }
 
     /**
@@ -47,7 +49,8 @@ class PoderController extends Controller
      */
     public function show(poder $poder)
     {
-        //
+        $poder = $poder::findOrfail($poder);
+        return response()->json($poder);
     }
 
     /**
@@ -70,7 +73,8 @@ class PoderController extends Controller
      */
     public function update(UpdatepoderRequest $request, poder $poder)
     {
-        //
+        $poder->update($request->all());
+        return response()->json($poder);
     }
 
     /**
@@ -81,6 +85,8 @@ class PoderController extends Controller
      */
     public function destroy(poder $poder)
     {
-        //
+        $poder = $poder::findOrfail($poder);
+        $poder->delete();
+        return response()->json(null);
     }
 }

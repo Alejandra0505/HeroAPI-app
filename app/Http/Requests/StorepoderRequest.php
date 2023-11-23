@@ -24,7 +24,7 @@ class StorepoderRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'superpoder'=> 'required|poders',
         ];
     }
 }

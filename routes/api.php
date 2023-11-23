@@ -1,5 +1,13 @@
 <?php
 
+use App\Http\Controllers\GrupoController;
+use App\Http\Controllers\HeroController;
+use App\Http\Controllers\MisionesController;
+use App\Http\Controllers\PoderController;
+use App\Http\Controllers\PoderhController;
+use App\Http\Controllers\TipomisionController;
+use App\Models\grupo;
+use Database\Factories\MisionesFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +22,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::apiResource('Hero',HeroController::class);
+Route::apiResource('grupo',GrupoController::class);
+Route::apiResource('misiones',MisionesController::class);
+Route::apiResource('poder',PoderController::class);
+Route::apiResource('poderh', PoderhController::class);
+Route::apiResource('tipomision', TipomisionController::class);

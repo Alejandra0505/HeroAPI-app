@@ -15,6 +15,6 @@ class HeroSeeder extends Seeder
      */
     public function run()
     {
-       Hero::factory()->count(1)->create();
+       Hero::factory()->count(5)->create();
     }
 }

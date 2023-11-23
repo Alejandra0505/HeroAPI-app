@@ -15,6 +15,6 @@ class PoderSeeder extends Seeder
      */
     public function run()
     {
-        poder::factory()->count(1)->create();
+        poder::factory()->count(5)->create();
     }
 }

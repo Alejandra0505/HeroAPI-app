@@ -16,7 +16,7 @@ class GrupoFactory extends Factory
      */
     public function definition():array
     {
-        $grupo = $this->faker->randomElement([
+        $grupo = $this->faker->unique()->randomElement([
             'Los Vengadores',
             'S.H.I.E.L.D',
             'Hydra',
@@ -26,6 +26,7 @@ class GrupoFactory extends Factory
             'Ejercito de ultron',
             'Nova Corps',
             'Control de daños',
+            'E.L.N',
         ]);
         return [
             'nombre' => $grupo,

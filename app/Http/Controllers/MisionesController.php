@@ -15,7 +15,8 @@ class MisionesController extends Controller
      */
     public function index()
     {
-        //
+        $misiones = misiones::all();
+        return response()->json($misiones);
     }
 
     /**
@@ -36,7 +37,8 @@ class MisionesController extends Controller
      */
     public function store(StoremisionesRequest $request)
     {
-        //
+        $misiones = misiones::create( $request->all() );
+        return response()->json($misiones);
     }
 
     /**
@@ -47,7 +49,8 @@ class MisionesController extends Controller
      */
     public function show(misiones $misiones)
     {
-        //
+        $misiones = misiones::findOrfail($misiones);
+        return response()->json($misiones);
     }
 
     /**
@@ -70,7 +73,8 @@ class MisionesController extends Controller
      */
     public function update(UpdatemisionesRequest $request, misiones $misiones)
     {
-        //
+        $misiones->update($request->all());
+        return response()->json($misiones);
     }
 
     /**
@@ -81,6 +85,8 @@ class MisionesController extends Controller
      */
     public function destroy(misiones $misiones)
     {
-        //
+        $misiones = misiones::findOrfail($misiones);
+        $misiones->delete();
+        return response()->json(null);
     }
 }

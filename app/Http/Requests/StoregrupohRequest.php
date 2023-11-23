@@ -24,7 +24,8 @@ class StoregrupohRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'hero_id'=>'required|heroes',
+            'grupo_id'=> 'required|grupos'
         ];
     }
 }

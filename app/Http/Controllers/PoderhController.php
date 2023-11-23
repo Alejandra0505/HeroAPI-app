@@ -15,7 +15,8 @@ class PoderhController extends Controller
      */
     public function index()
     {
-        //
+        $poderh = poderh::all();
+        return response()->json($poderh);
     }
 
     /**
@@ -25,7 +26,7 @@ class PoderhController extends Controller
      */
     public function create()
     {
-        //
+       //
     }
 
     /**
@@ -36,7 +37,8 @@ class PoderhController extends Controller
      */
     public function store(StorepoderhRequest $request)
     {
-        //
+        $poderh = poderh::create( $request->all() );
+        return response()->json($poderh);
     }
 
     /**
@@ -47,7 +49,8 @@ class PoderhController extends Controller
      */
     public function show(poderh $poderh)
     {
-        //
+        $poderh = poderh::findOrfail($poderh);
+        return response()->json($poderh);
     }
 
     /**
@@ -70,7 +73,8 @@ class PoderhController extends Controller
      */
     public function update(UpdatepoderhRequest $request, poderh $poderh)
     {
-        //
+        $poderh->update($request->all());
+        return response()->json($poderh);
     }
 
     /**
@@ -81,6 +85,8 @@ class PoderhController extends Controller
      */
     public function destroy(poderh $poderh)
     {
-        //
+        $poderh = $poderh::findOrfail($poderh);
+        $poderh->delete();
+        return response()->json(null);
     }
 }

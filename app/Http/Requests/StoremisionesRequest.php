@@ -24,7 +24,8 @@ class StoremisionesRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'estado'=> 'required|misiones',
+            'tipomision_id'=> 'required|tipomisions',
         ];
     }
 }

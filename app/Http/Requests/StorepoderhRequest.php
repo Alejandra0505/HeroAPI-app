@@ -24,7 +24,9 @@ class StorepoderhRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nivel'=>'required|poderhs',
+            'hero_id'=> 'required|heroes',
+            'poder_id'=> 'required|poders',
         ];
     }
 }

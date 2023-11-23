@@ -16,7 +16,7 @@ class HeroFactory extends Factory
      */
     public function definition():array
     {
-        $nombre = $this->faker->randomElement([
+        $nombre = $this->faker->unique()->randomElement([
             'Spiderman',
             'Iron-man',
             'Capitan America',
@@ -28,7 +28,7 @@ class HeroFactory extends Factory
             'Ant-man',
             'Falcon',
         ]);
-        $nombrereal = $this->faker->randomElement([
+        $nombrereal = $this->faker->unique()->randomElement([
             'Peter Parker',
             'Tony Stark',
             'Steve Rogers',

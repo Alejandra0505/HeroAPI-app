@@ -15,6 +15,6 @@ class PoderhSeeder extends Seeder
      */
     public function run()
     {
-        poderh::factory()->count(1)->create();
+        poderh::factory()->count(5)->create();
     }
 }

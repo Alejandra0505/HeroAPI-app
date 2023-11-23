@@ -24,7 +24,8 @@ class StoremisiongrupoRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'misiones_id'=>'required|misiones',
+            'grupo_id'=> 'required|grupos'
         ];
     }
 }

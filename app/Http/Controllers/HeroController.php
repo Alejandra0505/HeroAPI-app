@@ -15,7 +15,8 @@ class HeroController extends Controller
      */
     public function index()
     {
-        //
+        $hero = Hero::all();
+        return response()->json($hero);
     }
 
     /**
@@ -36,7 +37,8 @@ class HeroController extends Controller
      */
     public function store(StoreHeroRequest $request)
     {
-        //
+        $hero = Hero::create( $request->all() );
+        return response()->json($hero);
     }
 
     /**
@@ -47,7 +49,8 @@ class HeroController extends Controller
      */
     public function show(Hero $hero)
     {
-        //
+        $hero = Hero::findOrfail($hero);
+        return response()->json($hero);
     }
 
     /**
@@ -70,7 +73,8 @@ class HeroController extends Controller
      */
     public function update(UpdateHeroRequest $request, Hero $hero)
     {
-        //
+        $hero->update($request->all());
+        return response()->json($hero);
     }
 
     /**
@@ -81,6 +85,8 @@ class HeroController extends Controller
      */
     public function destroy(Hero $hero)
     {
-        //
+        $hero = Hero::findOrfail($hero);
+        $hero->delete();
+        return response()->json(null);
     }
 }

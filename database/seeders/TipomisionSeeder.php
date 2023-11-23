@@ -15,6 +15,6 @@ class TipomisionSeeder extends Seeder
      */
     public function run()
     {
-        tipomision::factory()->count(1)->create();  
+        tipomision::factory()->count(2)->create();  
     }
 }

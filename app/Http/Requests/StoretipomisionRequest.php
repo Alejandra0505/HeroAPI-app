@@ -24,7 +24,7 @@ class StoretipomisionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'tmision'=> 'required|tipomisions',
         ];
     }
 }

@@ -13,7 +13,7 @@ class StoreHeroRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,12 @@ class StoreHeroRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nombre' => 'required|unique:heroes',
+            'nombrereal'=> 'required|unique:heroes',
+            'studioanimacion'=> 'required|heroes',
+            'descripcion'=> 'required|heroes',
+            'origen'=> 'required|heroes',
+            'añodebut'=> 'required|heroes',
         ];
     }
 }

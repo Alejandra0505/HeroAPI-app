@@ -15,7 +15,8 @@ class GrupoController extends Controller
      */
     public function index()
     {
-        //
+        $grupo = grupo::all();
+        return response()->json($grupo);
     }
 
     /**
@@ -36,7 +37,8 @@ class GrupoController extends Controller
      */
     public function store(StoregrupoRequest $request)
     {
-        //
+        $grupo = grupo::create( $request->all() );
+        return response()->json($grupo);
     }
 
     /**
@@ -47,7 +49,8 @@ class GrupoController extends Controller
      */
     public function show(grupo $grupo)
     {
-        //
+        $grupo = grupo::findOrfail($grupo);
+        return response()->json($grupo);
     }
 
     /**
@@ -70,7 +73,8 @@ class GrupoController extends Controller
      */
     public function update(UpdategrupoRequest $request, grupo $grupo)
     {
-        //
+        $grupo->update($request->all());
+        return response()->json($grupo);
     }
 
     /**
@@ -81,6 +85,8 @@ class GrupoController extends Controller
      */
     public function destroy(grupo $grupo)
     {
-        //
+        $grupo = grupo::findOrfail($grupo);
+        $grupo->delete();
+        return response()->json(null);
     }
 }

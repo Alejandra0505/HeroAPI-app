@@ -15,7 +15,8 @@ class TipomisionController extends Controller
      */
     public function index()
     {
-        //
+        $tipomision = tipomision::all();
+        return response()->json($tipomision);
     }
 
     /**
@@ -36,7 +37,8 @@ class TipomisionController extends Controller
      */
     public function store(StoretipomisionRequest $request)
     {
-        //
+        $tipomision = tipomision::create( $request->all() );
+        return response()->json($tipomision);
     }
 
     /**
@@ -47,7 +49,8 @@ class TipomisionController extends Controller
      */
     public function show(tipomision $tipomision)
     {
-        //
+        $tipomision = $tipomision::findOrfail($tipomision);
+        return response()->json($tipomision);
     }
 
     /**
@@ -70,7 +73,8 @@ class TipomisionController extends Controller
      */
     public function update(UpdatetipomisionRequest $request, tipomision $tipomision)
     {
-        //
+        $tipomision->update($request->all());
+        return response()->json($tipomision);
     }
 
     /**
@@ -81,6 +85,8 @@ class TipomisionController extends Controller
      */
     public function destroy(tipomision $tipomision)
     {
-        //
+        $tipomision = $tipomision::findOrfail($tipomision);
+        $tipomision->delete();
+        return response()->json(null);
     }
 }

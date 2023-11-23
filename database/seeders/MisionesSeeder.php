@@ -15,6 +15,6 @@ class MisionesSeeder extends Seeder
      */
     public function run()
     {
-        misiones::factory()->count(1)->create();
+        misiones::factory()->count(5)->create();
     }
 }

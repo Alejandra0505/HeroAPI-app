@@ -16,7 +16,7 @@ class PoderFactory extends Factory
      */
     public function definition(): array
     {
-        $poder = $this->faker->randomElement([
+        $poder = $this->faker->unique()->randomElement([
             'telequinesia',
             'Super fuerza',
             'Proyección de energía',
