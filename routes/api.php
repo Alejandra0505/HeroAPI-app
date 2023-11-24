@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\AuthController;
 use App\Http\Controllers\GrupoController;
 use App\Http\Controllers\HeroController;
 use App\Http\Controllers\MisionesController;
@@ -22,9 +23,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('Hero',HeroController::class);
-Route::apiResource('grupo',GrupoController::class);
-Route::apiResource('misiones',MisionesController::class);
-Route::apiResource('poder',PoderController::class);
-Route::apiResource('poderh', PoderhController::class);
-Route::apiResource('tipomision', TipomisionController::class);
+Route::middleware("general")->group(function () {
+    Route::apiResource('Hero',HeroController::class);
+    Route::apiResource('grupo',GrupoController::class);
+    Route::apiResource('misiones',MisionesController::class);
+    Route::apiResource('poder',PoderController::class);
+    Route::apiResource('poderh', PoderhController::class);
+    Route::apiResource('tipomision', TipomisionController::class);
+});
+
+
+Route::controller(AuthController::class)->group(function () {
+    Route::post('login', 'login');
+    Route::post('register', 'register');
+    Route::post('logout', 'logout');
+    Route::post('refresh', 'refresh');
+});
