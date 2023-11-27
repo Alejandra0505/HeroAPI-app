@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Planeta;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('heroes', function (Blueprint $table) {
+        Schema::create('planetas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombre');
-            $table->string('nombrereal');
-            $table->string('studioanimacion');
-            $table->string('descripcion');
-            $table->string('añodebut');
-            $table->foreignIdFor(Planeta::class)->constrained();   
+            $table->string("nombrePlaneta");
             $table->timestamps();
         });
     }
@@ -33,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('heroes');
+        Schema::dropIfExists('planetas');
     }
 };

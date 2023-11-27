@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $this->call([HeroSeeder::class,PoderSeeder::class,GrupoSeeder::class,TipomisionSeeder::class,
-        PoderhSeeder::class,MisionesSeeder::class]);
+        PoderhSeeder::class,MisionesSeeder::class,PlanetaSeeder::class]);
     }
 }

@@ -2,11 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\poderh;
+use App\Models\Planeta;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PoderhSeeder extends Seeder
+class PlanetaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,6 @@ class PoderhSeeder extends Seeder
      */
     public function run()
     {
-        poderh::factory()->count(10)->create();
+        Planeta::factory()->count(10)->create();
     }
 }

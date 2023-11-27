@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreHeroRequest extends FormRequest
+class StorePlanetaRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class StoreHeroRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,13 +24,7 @@ class StoreHeroRequest extends FormRequest
     public function rules()
     {
         return [
-            'nombre' => 'required|unique:heroes',
-            'nombrereal'=> 'required|unique:heroes',
-            'studioanimacion'=> 'required|heroes',
-            'descripcion'=> 'required|heroes',
-            'origen'=> 'required|heroes',
-            'añodebut'=> 'required|heroes',
-            'planeta_id'=> 'required|Planeta',
+            'nombrePlaneta' => 'required|Planeta',
         ];
     }
 }

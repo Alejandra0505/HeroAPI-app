@@ -16,7 +16,7 @@ class HeroFactory extends Factory
      */
     public function definition():array
     {
-        $nombre = $this->faker->unique()->randomElement([
+        $nombre = $this->faker->randomElement([
             'Spiderman',
             'Iron-man',
             'Capitan America',
@@ -28,7 +28,7 @@ class HeroFactory extends Factory
             'Ant-man',
             'Falcon',
         ]);
-        $nombrereal = $this->faker->unique()->randomElement([
+        $nombrereal = $this->faker->randomElement([
             'Peter Parker',
             'Tony Stark',
             'Steve Rogers',
@@ -64,18 +64,6 @@ class HeroFactory extends Factory
             'Lang fue reclutado por el científico Hank Pym y se le pidió que se pusiera el viejo traje de Ant-Man',
             'Una vez que el ex paracaidista Sam Wilson se hizo rápidamente amigo de Steve Rogers, nunca se apartó de su lado.',
         ]);
-        $origen = $this->faker->randomElement([
-            'Tierra',
-            'Tierra',
-            'Tierra',
-            'Tierra',
-            'Azgard',
-            'Tierra',
-            'Tierra',
-            'Tierra',
-            'Tierra',
-            'Tierra',
-        ]);
         $añodebut = $this->faker->randomElement([
             '2002',
             '1968',
@@ -94,8 +82,10 @@ class HeroFactory extends Factory
             'nombrereal'=> $nombrereal,
             'studioanimacion'=> $studio,
             'descripcion'=> $descripcion,
-            'origen'=> $origen,
             'añodebut'=> $añodebut,
+            'planeta_id'=> function () {
+                return \App\Models\Planeta::factory()->create()->id;
+            },
             // "nombre"=> $this->faker->name(),
             // "nombrereal"=> $this->faker->name(),
             // "imagenperfil"=> $this->faker->image(),
