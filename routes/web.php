@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\HeroController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*

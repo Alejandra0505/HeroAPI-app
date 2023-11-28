@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Hero;
 use App\Http\Requests\StoreHeroRequest;
 use App\Http\Requests\UpdateHeroRequest;
-
 class HeroController extends Controller
 {
     /**
@@ -15,9 +14,11 @@ class HeroController extends Controller
      */
     public function index()
     {
-        $hero = Hero::all();
-        return response()->json($hero);
+       $hero = Hero::all();
+       return response()->json($hero);
     }
+
+    // Agrega métodos para otras operaciones CRUD (show, create, store, edit, update, destroy)
 
     /**
      * Show the form for creating a new resource.
@@ -40,7 +41,6 @@ class HeroController extends Controller
         $hero = Hero::create( $request->all() );
         return response()->json($hero);
     }
-
     /**
      * Display the specified resource.
      *
