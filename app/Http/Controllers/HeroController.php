@@ -15,7 +15,7 @@ class HeroController extends Controller
     public function index()
     {
        $hero = Hero::all();
-       return response()->json($hero);
+       return $hero;
     }
 
     // Agrega métodos para otras operaciones CRUD (show, create, store, edit, update, destroy)
